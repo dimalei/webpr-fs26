@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ball Test</title>
 </head>
+
 <body>
 
-<h1>Testing Snake</h1>
+    <h1>Testing Snake</h1>
 
-<script src="ball.js">
-</script>
-<pre>
+    <div class="bar"></div>
+
+    <script src="ball.js">
+    </script>
+    <pre>
 
 <script>
 
-let ok = [];
+    let ok = [];
 
-// TODO test:
+    // TODO test:
 
-// initial conditions
+    // initial conditions
 
-// after so-many calls to nextBoard, check the position and the x and y velocities
+    // after so-many calls to nextBoard, check the position and the x and y velocities
 
-// test result report
-if ( ok.every( elem => elem) ) {
-    document.writeln("All "+ ok.length +" tests ok.");
-} else {
-    document.writeln("Not all tests ok! Details:");
-    for (let i = 0; i<ok.length; i++) {
-        if(ok[i]) {
-            document.writeln("Test "+ i +" ok");
-        } else {
-            document.writeln("Test "+ i +" failed");
+    // test result report
+    if (ok.every(elem => elem)) {
+        document.writeln("All " + ok.length + " tests ok.");
+    } else {
+        document.writeln("Not all tests ok! Details:");
+        for (let i = 0; i < ok.length; i++) {
+            if (ok[i]) {
+                document.writeln("Test " + i + " ok");
+            } else {
+                document.writeln("Test " + i + " failed");
+            }
         }
     }
-}
 
 </script>
 
 </pre>
 </body>
+
 </html>
