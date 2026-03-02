@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Scope Tests</title>
+    <link rel="stylesheet" href="../test.css">
+    <script src="../test.js"></script>
 </head>
 <body>
+<div class="bar"></div>
     <script>
+        test(1===1);
 
-        const test = x => document.writeln( String(x));
-
-        let x = 0;
-        function foo() {
-            let x = 1;
-            document.writeln(String(x));
-        }
-        foo();
-        document.writeln(String(x));
+        //
+        // let x = 0;
+        // function foo() {
+        //     let x = 1;
+        //     document.writeln(String(x));
+        // }
+        // foo();
+        // document.writeln(String(x));
 
         // test( id(id) === id);
         // test( Konst(id)(undefined) === id);
