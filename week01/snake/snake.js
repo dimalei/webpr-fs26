@@ -1,8 +1,8 @@
 
-const north = {dx:  0, dy: -1};
-const east  = {dx:  1, dy:  0};
-const south = {dx:  0, dy:  1};
-const west  = {dx: -1, dy:  0};
+const north = { dx: 0, dy: -1 };
+const east = { dx: 1, dy: 0 };
+const south = { dx: 0, dy: 1 };
+const west = { dx: -1, dy: 0 };
 
 let direction = north;
 
@@ -10,27 +10,29 @@ const clockwise = [north, east, south, west, north];
 const countercw = [north, west, south, east, north];
 
 const snake = [
-    {x: 10, y: 5},
-    {x: 10, y: 6},
-    {x: 10, y: 7},
-    {x: 10, y: 8},
+    { x: 10, y: 5 },
+    { x: 10, y: 6 },
+    { x: 10, y: 7 },
+    { x: 10, y: 8 },
 ];
-let food = {x: 15, y: 15};
+let food = { x: 15, y: 15 };
 
-function snakeEquals(a, b) { 
-	/* fill here */
+function snakeEquals(a, b) {
+    /* fill here */
+    return snake.find({ x: a, y: b })
 }
 
 function changeDirection(orientation) {
     /* fill here */
+    direction = orientation[orientation.indexOf(direction) + 1];
 }
 
 function start() {
-    const canvas  = document.getElementById("canvas");
+    const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
 
     const rightArrow = 39;
-    const leftArrow  = 37;
+    const leftArrow = 37;
     window.onkeydown = evt => {
         const orientation = (evt.keyCode === rightArrow) ? clockwise : countercw;
         changeDirection(orientation);
@@ -48,7 +50,7 @@ function nextBoard() {
     const oldHead = snake[0];
 
     function inBounds(x, max) {
-        if (x < 0)   { return max - 1 }
+        if (x < 0) { return max - 1 }
         if (x > max) { return 0 }
         return x
     }
@@ -63,9 +65,11 @@ function nextBoard() {
         food.y = Math.floor(Math.random() * 20);
     } else {
         /* fill here */ // no food found => no growth despite new head => remove last element
+        snake.pop();
     }
 
     /* fill here */ // put head at front of the list
+    snake.push({ x: head.x, y: head.y });
 }
 
 function display(context) {
