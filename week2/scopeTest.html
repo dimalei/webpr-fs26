@@ -9,20 +9,27 @@
 <body>
 <div class="bar"></div>
     <script>
-        test(1===1);
 
-        //
-        // let x = 0;
-        // function foo() {
-        //     let x = 1;
-        //     document.writeln(String(x));
-        // }
-        // foo();
-        // document.writeln(String(x));
 
-        // test( id(id) === id);
-        // test( Konst(id)(undefined) === id);
-        // test( Kite(undefined)(id) === id);
+         // let x = 0;
+         // {
+         //     let x = 1;
+         //     document.writeln(String(x));
+         // } // IIFE
+         // document.writeln(String(x));
+
+        const id    = x => x;
+        const Konst = x => y => x;
+        // const Kite  = x => y => y;
+        // const Kite  = x => y => id(y);
+        // const Kite  = x => id;
+        // const Kite  = x => Konst (id) (x);
+        const Kite  = Konst (id) ;
+
+
+        test( id(id) === id);
+        test( Konst(id)(undefined) === id);
+        test( Kite(undefined)(id) === id);
 
     </script>
 </body>
