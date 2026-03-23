@@ -8,11 +8,16 @@
 </head>
 <body>
 <div class="bar"></div>
-<script src="function/function.js"></script>
-<script src="function/functionTest.js"></script>
 
-<script src="lambda/lambda.js"></script>
-<script src="lambda/lambdaTest.js"></script>
+<script>
+    [
+        "function",
+        "lambda",
+    ].forEach( name => {
+        document.writeln(`<script src="${name}/${name}.js"><`+`/script>`);
+        document.writeln(`<script src="${name}/${name}Test.js"><`+`/script>`);
+    });
+</script>
 
 </body>
 </html>
