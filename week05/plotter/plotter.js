@@ -1,28 +1,33 @@
 
-const minX =  0;
-const maxX =  6;
+const minX = 0;
+const maxX = 6;
 const minY = -1;
-const maxY =  1;
+const maxY = 1;
+
+
 
 function start() {
-    const userFunction = document.getElementById('user_function');
-    const canvas       = document.getElementById('canvas');
+    const textField = document.getElementById('user_function');
 
     // todo: how to display?
+    parseFunction(textField.value)
+    textField.addEventListener("input", handleInput);
+}
 
-    // display(canvas, x => eval(userFunction.value) );
-    // userFunction.onchange = _evt => {
-    //     display(canvas, x => eval(userFunction.value) );
-    // }
-    display(canvas, Function("x", "return "+userFunction.value) );
-    userFunction.onchange = _evt => {
-        display(canvas, Function("x", "return "+userFunction.value) );
-    }
+function handleInput(event) {
+    console.log(event);
+    parseFunction(event.currentTarget.value);
+}
+
+function parseFunction(functionString) {
+    const canvas = document.getElementById('canvas');
+    const f = eval("x => " + functionString);
+    display(canvas, f);
 }
 
 function display(canvas, f) {
     // clear
-    const context     = canvas.getContext("2d");
+    const context = canvas.getContext("2d");
     context.fillStyle = "papayawhip";
     context.fillRect(0, 0, canvas.width, canvas.height);
     // draw the function plot
@@ -47,5 +52,7 @@ const normalizeY = height => y => {
 
 const normalizeX = width => x => {
     const scaleFactor = width / (maxX - minX);
-    return ( x - minX) * scaleFactor;
+    return (x - minX) * scaleFactor;
 };
+
+start();
