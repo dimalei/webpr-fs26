@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <script>
+        // standard either
+        // const Left = x => f => g => f(x);
+        // const Right = x => f => g => g(x);
+        // const either = e => f => g => e(f)(g);
+
+        // const safeDiv = num => divisor =>
+        //     divisor === 0
+        //         ? Left("cannot divide by 0")
+        //         : Right(num / divisor);
+
+        // const result = safeDiv(1)(0);
+
+        // either(result)
+        //     (msq => document.writeln(msq));
+
+        // document.writeln(result);
+        // --------------------------------------------------------
+
+        // standard either
+
+
+        // const Left = x => f => g => f(x);
+        // const Right = x => f => g => g(x);
+        // const either = e => f => g => e(f)(g);
+
+        // const safeDiv = num => divisor =>
+        //     divisor === 0
+        //         ? Left("cannot divide by 0")
+        //         : Right(num / divisor);
+
+        // const result = safeDiv(1)(0);
+
+        // either(result)
+        //     (msq => document.writeln(msq));
+        // --------------------------------------------------------
+
+        // standard either
+
+        // const Left = x => f => g => f(x);
+        // const Right = x => f => g => g(x);
+        // const either = e => f => g => e(f)(g);
+
+        // const safeDiv = num => divisor =>
+        //     divisor == 0
+        //         ? Left("cannot divide by 0")
+        //         : Right(num / divisor);
+
+        // const result = safeDiv(1)(0);
+
+        // either(result)
+        //     (msq => document.writeln(msq))
+        //     (val => document.writeln(val === 1));
+
+
+        // --------------------------------------------------------
+
+
+        // standard either
+
+        // const Left = x => f => g => f(x);
+        // const Right = x => f => g => g(x);
+        // const either = e => f => g => e(f)(g);
+
+        // const safeDiv = num => divisor =>
+        //     divisor === 0
+        //         ? Left("cannot divide by 0")
+        //         : Right(num / divisor);
+
+        // const result = safeDiv(1)(0);
+
+        // either(result)
+        //     (msq => document.writeln(msq));
+
+        // --------------------------------------------------------
+
+
+        // standard either
+
+        const Left = x => f => g => f(x);
+        const Right = x => f => g => g(x);
+        const either = e => f => g => e(f)(g);
+
+        const safeDiv = num => divisor =>
+            divisor === 0
+                ? Left("cannot divide by 0")
+                : Right(num / divisor);
+
+        const result = safeDiv(1)(1);
+        either(result)
+
+            (msq => document.writeln(msq))
+            (val => document.writeln(val === 1));
+
+
+
+    </script>
+
+</body>
+
+</html>

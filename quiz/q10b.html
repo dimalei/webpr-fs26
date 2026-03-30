@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <script>
+        const factor_ = 0.2
+        document.writeln("test start")
+
+        const bonusFormula = "employee.revenue * 0.2";
+
+        // start solution
+        const bonusCalculation = Function('employee', `employee.bonus = ${bonusFormula}`);
+        // end solution
+
+        document.writeln("test start")
+
+        const e = { revenue: 10000, bonus: null };
+        bonusCalculation(e);
+        const res = e.bonus === e.revenue * factor_;
+
+        document.writeln(res)
+
+    </script>
+
+</body>
+
+</html>

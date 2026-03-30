@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <script>
+        document.writeln("<p>start <br>")
+
+        const predicate = x => x % 2 === 0;
+
+        // start solution
+        const filteredBy = (predicate) => (accumulator, currentValue) => predicate(currentValue) ? accumulator.push(currentValue) : accumulator;
+        // end solution
+
+
+        // [1,2,3,4].reduce(filteredBy(predicate), []) equals '[2,4]'
+
+        document.writeln("<p>test<br>")
+
+        // tested by
+        const limit_ = Math.random() * 5;
+        const p = x => x < limit_;
+        const res = [1, 2, 3, 4, 5].reduce(filteredBy(p), []).toString() === [1, 2, 3, 4, 5].filter(p).toString();
+
+
+        document.writeln("<p>result: <br>")
+
+        document.writeln(res)
+
+        document.writeln("<p>")
+
+    </script>
+
+</body>
+
+</html>

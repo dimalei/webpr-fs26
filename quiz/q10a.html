@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <script>
+        const factor_ = 0.2
+        document.writeln("<p>test start <br>")
+
+        const userInput = "employee.bonus = employee.revenue * 0.2";
+
+        // start solution
+        const bonusCalculation = (employee) => eval(userInput);
+        // end solution
+
+        document.writeln("test middle <br>")
+
+        const e = { revenue: 10000, bonus: null };
+        bonusCalculation(e);
+        const res = e.bonus === e.revenue * factor_;
+
+        document.writeln(res)
+
+        document.writeln("<p>")
+
+    </script>
+
+</body>
+
+</html>
